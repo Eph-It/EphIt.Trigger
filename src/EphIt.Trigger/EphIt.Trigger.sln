@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EphIt.Trigger", "EphIt.Trigger\EphIt.Trigger.csproj", "{C614A947-613E-4AEA-A07C-269D223391FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EphIt.Trigger.Test", "EphIt.Trigger.Test\EphIt.Trigger.Test.csproj", "{0DAD0DB6-EA02-4504-85CD-88378728CE71}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C614A947-613E-4AEA-A07C-269D223391FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C614A947-613E-4AEA-A07C-269D223391FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C614A947-613E-4AEA-A07C-269D223391FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C614A947-613E-4AEA-A07C-269D223391FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DAD0DB6-EA02-4504-85CD-88378728CE71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DAD0DB6-EA02-4504-85CD-88378728CE71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DAD0DB6-EA02-4504-85CD-88378728CE71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DAD0DB6-EA02-4504-85CD-88378728CE71}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1194EF01-F8B6-4FD4-A9FD-AC5F1426E56A}
+	EndGlobalSection
+EndGlobal
