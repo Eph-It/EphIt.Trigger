@@ -8,9 +8,12 @@ namespace EphIt.Trigger.Triggers
     public class IntervalTrigger : ITrigger
     {
         private Models.Trigger _model;
-        public void Initialize(Models.Trigger model)
+        private Models.TriggerContext _context;
+        public void Initialize(Models.Trigger model, Models.TriggerContext context)
         {
             _model = model;
+            _context = context;
+            _context.Entry(model).Reference(p => p.Interval).Load();
         }
 
         public bool Ready()
@@ -25,5 +28,10 @@ namespace EphIt.Trigger.Triggers
             }
             return true;
         }
+        public DateTime NextEvaluation()
+        {
+            return (DateTime.UtcNow.AddTicks(_model.Interval.Interval));
+        }
+
     }
 }

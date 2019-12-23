@@ -13,11 +13,16 @@ namespace EphIt.Trigger
         /// TriggerModel which creates a base set of properties
         /// </summary>
         /// <param name="model">Creates a base set of properties to query EF</param>
-        void Initialize(Models.Trigger model);
+        void Initialize(Models.Trigger model, Models.TriggerContext context);
         /// <summary>
         /// Evalutes the trigger's condition to see if we should run yet
         /// </summary>
         /// <returns>True if the corresponding action should be run</returns>
         bool Ready();
+        /// <summary>
+        /// Next time this trigger should evaluate
+        /// </summary>
+        /// <returns>Next trigger evaluation</returns>
+        DateTime NextEvaluation();
     }
 }

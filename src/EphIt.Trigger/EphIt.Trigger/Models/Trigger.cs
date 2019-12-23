@@ -19,7 +19,7 @@ namespace EphIt.Trigger.Models
         /// </summary>
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int TriggerId { get; set; }
         /// <summary>
         /// Last time this Trigger successfully ran
         /// </summary>
@@ -41,9 +41,9 @@ namespace EphIt.Trigger.Models
         /// </summary>
         public Guid? LastJobId { get; set; }
         /// <summary>
-        /// How often do we internally check this trigger
+        /// How often do we internally check this trigger - measured in ticks
         /// </summary>
-        public int TriggerInterval { get; set; }
+        public long TriggerInterval { get; set; }
         public Trigger_Interval Interval { get; set; }
     }
     public class TriggerConfiguration : IEntityTypeConfiguration<Trigger>

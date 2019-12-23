@@ -2,13 +2,16 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace EphIt.Trigger.Models
 {
     public class Trigger_Interval
     {
-        public int Interval { get; set; }
+        [Key]
+        public int TriggerId { get; set; }
+        public long Interval { get; set; }
         public Trigger Trigger { get; set; }
     }
     public class Trigger_IntervalConfiguration : IEntityTypeConfiguration<Trigger_Interval>
