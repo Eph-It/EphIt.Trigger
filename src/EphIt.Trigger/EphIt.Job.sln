@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29613.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EphIt.Job", "EphIt.Trigger\EphIt.Job.csproj", "{C614A947-613E-4AEA-A07C-269D223391FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EphIt.Job", "EphIt.Job\EphIt.Job.csproj", "{C614A947-613E-4AEA-A07C-269D223391FD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EphIt.Job.Test", "EphIt.Trigger.Test\EphIt.Job.Test.csproj", "{0DAD0DB6-EA02-4504-85CD-88378728CE71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EphIt.Job.Test", "EphIt.Job.Test\EphIt.Job.Test.csproj", "{0DAD0DB6-EA02-4504-85CD-88378728CE71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

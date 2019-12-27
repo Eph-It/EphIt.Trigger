@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EphIt.Trigger\EphIt.Job.csproj" />
+    <ProjectReference Include="..\EphIt.Job\EphIt.Job.csproj" />
   </ItemGroup>
 
 </Project>
