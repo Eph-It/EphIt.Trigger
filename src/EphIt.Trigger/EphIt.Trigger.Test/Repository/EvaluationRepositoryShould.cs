@@ -7,9 +7,9 @@ using Xunit;
 
 namespace EphIt.Trigger.Test.Repository
 {
-    public class EvaluationShould
+    public class EvaluationRepositoryShould
     {
-        public EvaluationShould()
+        public EvaluationRepositoryShould()
         {
 
         }

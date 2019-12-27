@@ -8,9 +8,9 @@ namespace EphIt.Trigger.Models
     public class TriggerContext : DbContext
     {
         public TriggerContext(DbContextOptions options) : base (options) { }
-
-        public DbSet<Trigger> Trigger { get; set; }
-        public DbSet<Trigger_Interval> Trigger_Interval { get; set; }
+        public TriggerContext() { }
+        public virtual DbSet<Trigger> Trigger { get; set; }
+        public virtual DbSet<Trigger_Interval> Trigger_Interval { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
