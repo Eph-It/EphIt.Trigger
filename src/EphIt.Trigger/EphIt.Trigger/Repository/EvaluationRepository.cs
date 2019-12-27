@@ -1,15 +1,15 @@
-﻿using EphIt.Trigger.Models;
+﻿using EphIt.Job.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace EphIt.Trigger.Repository
+namespace EphIt.Job.Repository
 {
     public class EvaluationRepository
     {
-        private TriggerContext _triggerContext;
+        private JobContext _triggerContext;
         private ITriggerRepository _triggerRepo;
-        public EvaluationRepository(TriggerContext triggerContext, ITriggerRepository triggerRepository)
+        public EvaluationRepository(JobContext triggerContext, ITriggerRepository triggerRepository)
         {
             _triggerContext = triggerContext;
             _triggerRepo = triggerRepository;

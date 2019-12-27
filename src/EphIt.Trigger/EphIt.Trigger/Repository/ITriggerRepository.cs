@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace EphIt.Trigger.Repository
+namespace EphIt.Job.Repository
 {
     public interface ITriggerRepository
     {

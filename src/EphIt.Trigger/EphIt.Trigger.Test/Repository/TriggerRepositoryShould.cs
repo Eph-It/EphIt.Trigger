@@ -1,5 +1,5 @@
-﻿using EphIt.Trigger.Models;
-using EphIt.Trigger.Repository;
+﻿using EphIt.Job.Models;
+using EphIt.Job.Repository;
 using Microsoft.EntityFrameworkCore;
 using Moq;
 using System;
@@ -8,24 +8,24 @@ using System.Linq;
 using System.Text;
 using Xunit;
 using EntityFrameworkCore3Mock;
-using EphIt.Trigger.Triggers;
+using EphIt.Job.Triggers;
 
-namespace EphIt.Trigger.Test.Repository
+namespace EphIt.Job.Test.Repository
 {
     public class TriggerRepositoryShould
     {
-        private TriggerContext _context;
-        private DbContextMock<TriggerContext> _mockContext;
+        private JobContext _context;
+        private DbContextMock<JobContext> _mockContext;
         private TriggerRepository _triggerRepo;
         private TriggerRepository _mockTriggerRepo;
         public TriggerRepositoryShould()
         {
-            var options = new DbContextOptionsBuilder<TriggerContext>()
+            var options = new DbContextOptionsBuilder<JobContext>()
                 .UseInMemoryDatabase(databaseName: "TriggerDB")
                 .Options;
-            _context = new TriggerContext(options);
+            _context = new JobContext(options);
             _triggerRepo = new TriggerRepository(_context);
-            _mockContext = new DbContextMock<TriggerContext>();
+            _mockContext = new DbContextMock<JobContext>();
             _mockTriggerRepo = new TriggerRepository(_mockContext.Object);
         }
         [Fact]

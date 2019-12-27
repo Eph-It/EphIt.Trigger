@@ -1,7 +1,7 @@
-﻿using EphIt.Trigger.Models;
+﻿using EphIt.Job.Models;
 using System;
 
-namespace EphIt.Trigger
+namespace EphIt.Job
 {
     /// <summary>
     /// The core Trigger interface for defining when an action should run.
@@ -13,7 +13,7 @@ namespace EphIt.Trigger
         /// TriggerModel which creates a base set of properties
         /// </summary>
         /// <param name="model">Creates a base set of properties to query EF</param>
-        void Initialize(Models.Trigger model, Models.TriggerContext context);
+        void Initialize(Models.Trigger model, Models.JobContext context);
         /// <summary>
         /// Evalutes the trigger's condition to see if we should run yet
         /// </summary>

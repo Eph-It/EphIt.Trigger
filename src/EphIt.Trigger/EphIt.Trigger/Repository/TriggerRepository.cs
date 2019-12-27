@@ -1,17 +1,17 @@
-﻿using EphIt.Trigger.Models;
-using EphIt.Trigger.Triggers;
+﻿using EphIt.Job.Models;
+using EphIt.Job.Triggers;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace EphIt.Trigger.Repository
+namespace EphIt.Job.Repository
 {
     public class TriggerRepository : ITriggerRepository
     {
-        private TriggerContext _triggerContext;
-        public TriggerRepository(TriggerContext triggerContext)
+        private JobContext _triggerContext;
+        public TriggerRepository(JobContext triggerContext)
         {
             _triggerContext = triggerContext;
         }
@@ -33,6 +33,9 @@ namespace EphIt.Trigger.Repository
                 }
                 catch (DbUpdateException ex)
                 {
+                    // This exception means something modified the DB between getting return trigger
+                    // and editing it. This may happen if multiple services all use the same DB so 
+                    // just re-call this method to get the next one
                     return GetNextTrigger();
                 }
             }
@@ -40,12 +43,17 @@ namespace EphIt.Trigger.Repository
         }
         public ITrigger ConvertToITrigger(Models.Trigger trigger)
         {
+            ITrigger _returnTrigger = null;
             switch (trigger.Type)
             {
                 case "Interval":
-                    var it = new IntervalTrigger();
-                    it.Initialize(trigger, _triggerContext);
-                    return it;
+                    _returnTrigger = new IntervalTrigger();
+                    break;
+            }
+            if(_returnTrigger != null)
+            {
+                _returnTrigger.Initialize(trigger, _triggerContext);
+                return _returnTrigger;
             }
             throw new Exception("Could not find trigger type");
         }

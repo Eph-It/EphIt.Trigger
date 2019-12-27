@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 
-namespace EphIt.Trigger.Models
+namespace EphIt.Job.Models
 {
     public class Trigger_Interval
     {

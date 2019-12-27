@@ -1,15 +1,15 @@
-﻿using EphIt.Trigger.Models;
+﻿using EphIt.Job.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace EphIt.Trigger.Triggers
+namespace EphIt.Job.Triggers
 {
     public class IntervalTrigger : ITrigger
     {
         private Models.Trigger _model;
-        private Models.TriggerContext _context;
-        public void Initialize(Models.Trigger model, Models.TriggerContext context)
+        private Models.JobContext _context;
+        public void Initialize(Models.Trigger model, Models.JobContext context)
         {
             _model = model;
             _context = context;

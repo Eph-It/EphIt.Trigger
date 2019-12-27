@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 
-namespace EphIt.Trigger.Models
+namespace EphIt.Job.Models
 {
-    public class TriggerContext : DbContext
+    public class JobContext : DbContext
     {
-        public TriggerContext(DbContextOptions options) : base (options) { }
-        public TriggerContext() { }
+        public JobContext(DbContextOptions options) : base (options) { }
+        public JobContext() { }
         public virtual DbSet<Trigger> Trigger { get; set; }
         public virtual DbSet<Trigger_Interval> Trigger_Interval { get; set; }
         

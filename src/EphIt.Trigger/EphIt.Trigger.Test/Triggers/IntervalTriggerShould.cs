@@ -1,18 +1,18 @@
-﻿using EphIt.Trigger.Models;
-using EphIt.Trigger.Triggers;
+﻿using EphIt.Job.Models;
+using EphIt.Job.Triggers;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Xunit;
 
-namespace EphIt.Trigger.Test.Triggers
+namespace EphIt.Job.Test.Triggers
 {
     public class IntervalTriggerShould
     {
         private IntervalTrigger _trigger;
         private Models.Trigger _model;
-        private Models.TriggerContext _context;
+        private Models.JobContext _context;
         public IntervalTriggerShould()
         {
             _trigger = new IntervalTrigger();
@@ -25,10 +25,10 @@ namespace EphIt.Trigger.Test.Triggers
                 TriggerId = 1,
                 Interval = 100
             };
-            var options = new DbContextOptionsBuilder<TriggerContext>()
+            var options = new DbContextOptionsBuilder<JobContext>()
                 .UseInMemoryDatabase(databaseName: "TriggerDB")
                 .Options;
-            _context = new TriggerContext(options);
+            _context = new JobContext(options);
             _context.Trigger.Add(_model);
             _context.Trigger_Interval.Add(interval);
         }

@@ -6,13 +6,13 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace EphIt.Trigger.Models
+namespace EphIt.Job.Models
 {
     public class Trigger
     {
         public Trigger()
         {
-            
+            Jobs = new HashSet<Job>();
         }
         /// <summary>
         /// Identity of the row
@@ -41,10 +41,6 @@ namespace EphIt.Trigger.Models
         /// </summary>
         public DateTime? NextEvaluation { get; set; }
         /// <summary>
-        /// The JobId from the last time this trigger ran
-        /// </summary>
-        public Guid? LastJobId { get; set; }
-        /// <summary>
         /// How often do we internally check this trigger - measured in ticks
         /// </summary>
         public long TriggerInterval { get; set; }
@@ -54,6 +50,7 @@ namespace EphIt.Trigger.Models
         [Timestamp]
         public byte[] RowVersion { get; set; }
         public Trigger_Interval Interval { get; set; }
+        public ICollection<Job> Jobs { get; set; }
     }
     public class TriggerConfiguration : IEntityTypeConfiguration<Trigger>
     {
